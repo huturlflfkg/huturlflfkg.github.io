@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -23,11 +23,29 @@
             margin: 0;
             font-size: 2.5em;
         }
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-bottom: 2px solid #4CAF50;
         }
-        section {
+        .tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            background: #e7f3e7;
+            border: none;
+            border-right: 1px solid #4CAF50;
+            transition: background 0.3s;
+        }
+        .tab:hover {
+            background: #d4edda;
+        }
+        .tab.active {
+            background: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
             padding: 20px;
             margin: 20px auto;
             max-width: 800px;
@@ -35,20 +53,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-        }
-        .skills ul, .projects ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skills li, .projects li {
-            background: #e7f3e7;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+        .tab-content.active {
+            display: block;
         }
         footer {
             text-align: center;
@@ -70,16 +76,31 @@
 </head>
 <body>
     <header>
-        <h1>Иван Иванов</h1>
-        <p>Веб-разработчик и дизайнер</p>
+        <h1>Моё Портфолио</h1>
     </header>
 
-    <section id="about">
-        <h2>Обо мне</h2>
-        <p>Привет! Я начинающий веб-разработчик с опытом создания сайтов и веб-приложений. Умею работать с HTML, CSS, JavaScript и фреймворками. Стремлюсь к постоянному развитию и созданию качественных проектов.</p>
-    </section>
+    <!-- Вкладки -->
+    <div class="tab-container">
+        <button class="tab active" onclick="openTab('about')">Обо мне</button>
+        <button class="tab" onclick="openTab('skills')">Навыки</button>
+        <button class="tab" onclick="openTab('projects')">Проекты</button>
+        <button class="tab" onclick="openTab('education')">Образование</button>
+        <button class="tab" onclick="openTab('experience')">Опыт работы</button>
+        <button class="tab" onclick="openTab('blog')">Блог</button>
+        <button class="tab" onclick="openTab('gallery')">Галерея</button>
+        <button class="tab" onclick="openTab('contact')">Контакты</button>
+        <button class="tab" onclick="openTab('faq')">FAQ</button>
+        <button class="tab" onclick="openTab('feedback')">Отзывы</button>
+    </div>
 
-    <section id="skills">
+    <!-- Контент вкладок -->
+    <div id="about" class="tab-content active">
+        <h2>Обо мне</h2>
+        <p>Привет!я начинающий разработчик робе коде начинаю прогромировать и делать поделки из дерева и на 3д принтере.</p>
+     <p>и сайт разрабатываю методом тыка.</p>
+    </div>
+
+    <div id="skills" class="tab-content">
         <h2>Навыки</h2>
         <ul>
             <li>HTML5 и CSS3</li>
@@ -88,36 +109,69 @@
             <li>Git и GitHub</li>
             <li>Figma для прототипирования</li>
         </ul>
-    </section>
+    </div>
 
-    <section id="projects">
+    <div id="projects" class="tab-content">
         <h2>Проекты</h2>
         <ul>
-            <li>
-                <strong>Личный блог</strong> - Простой блог на HTML/CSS с адаптивным дизайном.
-                <a href="https://example.com">Посмотреть</a>
-            </li>
-            <li>
-                <strong>Сайт портфолио</strong> - Одностраничный сайт-портфолио.
-                <a href="#">Посмотреть</a>
-            </li>
-            <li>
-                <strong>Todo App</strong> - Приложение для управления задачами на React.js.
-                <a href="#">Посмотреть</a>
-            </li>
+            <li><strong>Личный блог</strong> - Простой блог на HTML/CSS.</li>
+            <li><strong>Сайт портфолио</strong> - Одностраничный сайт.</li>
+            <li><strong>Todo App</strong> - Приложение для управления задачами.</li>
         </ul>
-    </section>
+    </div>
 
-    <section id="contact">
+    <div id="education" class="tab-content">
+        <h2>Образование</h2>
+        <p>Закончил университет по специальности "Информационные технологии".</p>
+    </div>
+
+    <div id="experience" class="tab-content">
+        <h2>Опыт работы</h2>
+        <p>Работал веб-разработчиком в компании "IT Solutions" (2 года).</p>
+    </div>
+
+    <div id="blog" class="tab-content">
+        <h2>Блог</h2>
+        <p>Читайте мои статьи о веб-разработке <a href="#">здесь</a>.</p>
+    </div>
+
+    <div id="gallery" class="tab-content">
+        <h2>Галерея</h2>
+        <p>Здесь могли бы быть фотографии моих проектов.</p>
+    </div>
+
+    <div id="contact" class="tab-content">
         <h2>Контакты</h2>
-        <p>Свяжитесь со мной:</p>
         <p>Email: <a href="mailto:ivan@example.com">ivan@example.com</a></p>
         <p>Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
-        <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
-    </section>
+    </div>
+
+    <div id="faq" class="tab-content">
+        <h2>FAQ</h2>
+        <p><strong>Как связаться?</strong> Используйте форму контактов.</p>
+    </div>
+
+    <div id="feedback" class="tab-content">
+        <h2>Отзывы</h2>
+        <p>Здесь могли бы быть отзывы клиентов.</p>
+    </div>
 
     <footer>
-        <p>&copy; 2023 Иван Иванов. Все права защищены.</p>
+        <p>&copy; 2023 Моё Портфолио. Все права защищены.</p>
     </footer>
+
+    <script>
+        function openTab(tabName) {
+            // Убираем активный класс у всех вкладок и контента
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Добавляем активный класс выбранной вкладке и контенту
+            document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
 </body>
 </html>
