@@ -1,85 +1,123 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Пример качественного сайта с HTML, CSS и JavaScript">
-  <title>Мой Красивый Сайт</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё Портфолио</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .skills ul, .projects ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li, .projects li {
+            background: #e7f3e7;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <!-- Шапка сайта -->
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="#" class="logo">МойСайт</a>
-        <ul class="nav-links">
-          <li><a href="#about">О нас</a></li>
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#contact">Контакты</a></li>
+    <header>
+        <h1>Иван Иванов</h1>
+        <p>Веб-разработчик и дизайнер</p>
+    </header>
+
+    <section id="about">
+        <h2>Обо мне</h2>
+        <p>Привет! Я начинающий веб-разработчик с опытом создания сайтов и веб-приложений. Умею работать с HTML, CSS, JavaScript и фреймворками. Стремлюсь к постоянному развитию и созданию качественных проектов.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Навыки</h2>
+        <ul>
+            <li>HTML5 и CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Git и GitHub</li>
+            <li>Figma для прототипирования</li>
         </ul>
-      </nav>
-    </div>
-  </header>
+    </section>
 
-  <!-- Главный баннер -->
-  <section class="hero">
-    <div class="container">
-      <h1>Добро пожаловать на мой сайт!</h1>
-      <p>Здесь вы найдете все, что вам нужно.</p>
-      <a href="#services" class="btn">Узнать больше</a>
-    </div>
-  </section>
+    <section id="projects">
+        <h2>Проекты</h2>
+        <ul>
+            <li>
+                <strong>Личный блог</strong> - Простой блог на HTML/CSS с адаптивным дизайном.
+                <a href="https://example.com">Посмотреть</a>
+            </li>
+            <li>
+                <strong>Сайт портфолио</strong> - Одностраничный сайт-портфолио.
+                <a href="#">Посмотреть</a>
+            </li>
+            <li>
+                <strong>Todo App</strong> - Приложение для управления задачами на React.js.
+                <a href="#">Посмотреть</a>
+            </li>
+        </ul>
+    </section>
 
-  <!-- Раздел "О нас" -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>О нас</h2>
-      <p>Мы команда профессионалов, стремящихся к созданию качественных продуктов и услуг.</p>
-    </div>
-  </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной:</p>
+        <p>Email: <a href="mailto:ivan@example.com">ivan@example.com</a></p>
+        <p>Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
+        <p>GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></p>
+    </section>
 
-  <!-- Раздел "Услуги" -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Наши услуги</h2>
-      <div class="service-cards">
-        <div class="card">
-          <h3>Веб-разработка</h3>
-          <p>Создаем современные сайты под ваши задачи.</p>
-        </div>
-        <div class="card">
-          <h3>Дизайн</h3>
-          <p>Разрабатываем уникальный дизайн для вашего бизнеса.</p>
-        </div>
-        <div class="card">
-          <h3>Маркетинг</h3>
-          <p>Помогаем продвигать ваш бренд в интернете.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Раздел "Контакты" -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Свяжитесь с нами</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Ваше имя" required>
-        <input type="email" id="email" placeholder="Ваш email" required>
-        <textarea id="message" placeholder="Ваше сообщение" required></textarea>
-        <button type="submit" class="btn">Отправить</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Футер -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2023 МойСайт. Все права защищены.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2023 Иван Иванов. Все права защищены.</p>
+    </footer>
 </body>
 </html>
