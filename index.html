@@ -86,6 +86,39 @@
         ul {
             padding-left: 20px;
         }
+        .ai-chat {
+            margin: 20px auto;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .ai-chat input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .ai-chat button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .ai-chat button:hover {
+            background: #45a049;
+        }
+        .ai-response {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -104,17 +137,19 @@
         <button class="tab" onclick="openTab('contact')" role="tab">Контакты</button>
         <button class="tab" onclick="openTab('faq')" role="tab">FAQ</button>
         <button class="tab" onclick="openTab('feedback')" role="tab">Отзывы</button>
+        <button class="tab" onclick="openTab('ai')" role="tab">Чат с ИИ</button>
     </div>
     <!-- Контент вкладок -->
     <div id="about" class="tab-content active" role="tabpanel">
         <h2>Обо мне</h2>
-        <p>Я начинающий разработчик, увлекаюсь созданием игр на платформе Robo Code. Живу в городе Лобня, Московская область. Умею работать с деревом и 3D-принтером. В настоящее время участвую в конкурсе по созданию летающего корабля ко Дню космонавтики.</p>
+        <p>Я начинающий разработчик в Robo Code и создаю игру хоррор. Я живу в городке Лобне в районе Московского округа. Также я умею делать поделки из дерева и на 3D-принтере. Недавно на Robo Code объявили конкурс, где нужно сделать проект летающего корабля до 1 апреля, то есть ко Дню космонавтики, своими руками (также можно напечатать на 3D-принтере). Я хочу напечатать ракету-шатл.</p>
         <img src="https://static.wikia.nocookie.net/pandemonium-rop/images/1/1e/Fire_wolf_by_hemamm-d64vdw8.jpg/revision/latest/scale-to-width-down/1200?cb=20170717215605" alt="Огненная собака">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/23d6d0bd-5be7-4a1e-9b34-c8a85ed5f522/d64vdw8-376eab4c-2c0e-4839-a74f-f66b887661c9.jpg/v1/fill/w_1192,h_670,q_70,strp/fire_wolf_by_hemamm_d64vdw8-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMjNkNmQwYmQtNWJlNy00YTFlLTliMzQtYzhhODVlZDVmNTIyXC9kNjR2ZHc4LTM3NmVhYjRjLTJjMGUtNDgzOS1hNzRmLWY2NmI4ODc2NjFjOS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.f38SgfHMVEwkLjNQqqUR3WCxX8p26sDZ9RaG58Z5IZU" alt="Огненная собака">
     </div>
     <div id="skills" class="tab-content" role="tabpanel">
         <h2>Навыки</h2>
         <ul>
-            <li>Работа с нейросетями</li>
+            <li>Пройдены нейронные сети</li>
             <li>GitHub</li>
             <li>Kwen</li>
             <li>Leonardo</li>
@@ -124,22 +159,26 @@
     <div id="projects" class="tab-content" role="tabpanel">
         <h2>Проекты</h2>
         <ul>
-            <li><strong>Умный город в LEGO:</strong> Создание системы освещения с использованием светодиодов, резисторов и датчиков света.</li>
+            <li><strong>Умный город в LEGO:</strong> Моя команда занималась освещением города. Для этого нам потребовались светодиоды, резисторы, провода типа "мама-папа" и датчик света.</li>
             <li><strong>Сайт портфолио:</strong> Одностраничный сайт.</li>
-            <li><strong>Умный дом:</strong> Разработка сигнализации с использованием дальномера, проводов, пищалки и платы Arduino.</li>
+            <li><strong>Умный дом:</strong> Сейчас я занимаюсь проектом "умный дом". Моя команда занимается сигнализацией. Нам потребовались дальномер, провода с пищалкой и плата Arduino.</li>
         </ul>
     </div>
     <div id="education" class="tab-content" role="tabpanel">
         <h2>Образование</h2>
-        <p>Учусь в школе "Авиатика" в 6 классе. Также окончил 5-летний курс в школе искусств города Лобня.</p>
+        <p>Сейчас я учусь в школе "Авиатика" в 6 классе.</p>
+        <p>Также окончил школу искусств города Лобня (5-летку).</p>
     </div>
     <div id="experience" class="tab-content" role="tabpanel">
         <h2>Любимые фильмы</h2>
-        <p>Мои любимые фильмы — это настоящие шедевры, которые оставили неизгладимый след в моей душе. Среди них особое место занимают работы о Гарри Поттере, а также такие культовые картины, как «Разрыв Сан-Андреас» и «Дом с часами». Эти фильмы учат нас быть сильнее, верить в себя и ценить семью.</p>
+        <p>Мои любимые фильмы — это настоящие шедевры, которые оставили неизгладимый след в моей душе. Среди них особое место занимают работы о Гарри Поттере, а также такие культовые картины, как «Разрыв Сан-Андреас», «Дом с часами» и другие. Эти фильмы учат нас быть сильнее, верить в себя и ценить семью.</p>
+        <p>Серия фильмов о Гарри Поттере — это целая вселенная, созданная Джоан Роулинг и воплощённая на экране благодаря талантливым режиссёрам и актёрам. Всего восемь частей этой саги рассказывают историю мальчика-волшебника, который узнаёт о своём происхождении и отправляется в школу чародейства и волшебства Хогвартс. Здесь начинаются его невероятные приключения, наполненные дружбой, любовью, предательством и борьбой со злом.</p>
+        <p>Фильм «Разрыв Сан-Андреас» — это захватывающий экшен, который держит в напряжении с первой до последней минуты. Главную роль в нём играет Дуэйн Джонсон, который предстаёт перед нами в образе бесстрашного пилота вертолёта Рэя Гейнса. Сюжет разворачивается вокруг катастрофического землетрясения, которое уничтожает Калифорнию. Рэй должен спасти свою семью, оказавшуюся в самом эпицентре стихийного бедствия.</p>
+        <p>«Дом с часами» — это мистическая история, которая переносит нас в мир магии и загадок. Фильм рассказывает о мальчике Льюисе, который переезжает жить к своему эксцентричному дяде Джонатану. Со временем он узнаёт, что дом, в котором они живут, скрывает множество тайн, включая странные часы, способные изменить течение времени.</p>
     </div>
     <div id="blog" class="tab-content" role="tabpanel">
         <h2>Блог</h2>
-        <p>Современный мир стремительно движется вперёд, и сочетание 3D-печати и искусственного интеллекта становится всё более значимым. Эти технологии меняют подход к производству, медицине, образованию и искусству. Например, ИИ помогает автоматизировать проектирование, оптимизировать материалы и минимизировать ошибки при печати...</p>
+        <p>3D-Принтеры и ИИ: Эволюция Технологий и Их Возможности. Современный мир стремительно движется вперёд, и сочетание 3D-печати и искусственного интеллекта становится всё более значимым. Эти технологии меняют подход к производству, медицине, образованию и искусству...</p>
     </div>
     <div id="gallery" class="tab-content" role="tabpanel">
         <h2>Галерея</h2>
@@ -159,6 +198,14 @@
         <h2>Отзывы</h2>
         <p>Здесь могли бы быть отзывы клиентов.</p>
     </div>
+    <div id="ai" class="tab-content" role="tabpanel">
+        <div class="ai-chat">
+            <h2>Чат с ИИ</h2>
+            <input type="text" id="userInput" placeholder="Задайте вопрос..." />
+            <button onclick="getAIResponse()">Отправить</button>
+            <div class="ai-response" id="aiResponse"></div>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2023 Портфолио Шлотова Алексея. Все права защищены.</p>
     </footer>
@@ -170,6 +217,28 @@
             contents.forEach(content => content.classList.remove('active'));
             document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
             document.getElementById(tabName).classList.add('active');
+        }
+
+        // Функционал для взаимодействия с ИИ
+        function getAIResponse() {
+            const userInput = document.getElementById('userInput').value;
+            const aiResponseDiv = document.getElementById('aiResponse');
+            if (!userInput.trim()) {
+                aiResponseDiv.textContent = 'Пожалуйста, введите вопрос.';
+                return;
+            }
+
+            // Пример простого ответа от ИИ
+            const responses = {
+                "как дела": "Всё отлично, спасибо! А у вас?",
+                "кто ты": "Я — искусственный интеллект, созданный для общения и помощи.",
+                "что ты умеешь": "Я могу отвечать на вопросы, давать советы и общаться на разные темы.",
+                "default": "Извините, я не понимаю этот вопрос."
+            };
+
+            const response = responses[userInput.toLowerCase()] || responses["default"];
+            aiResponseDiv.textContent = `Вы: ${userInput}\nИИ: ${response}`;
+            document.getElementById('userInput').value = '';
         }
     </script>
 </body>
