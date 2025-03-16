@@ -118,6 +118,7 @@
             padding: 10px;
             background: #f1f1f1;
             border-radius: 4px;
+            min-height: 50px;
         }
     </style>
 </head>
@@ -171,7 +172,7 @@
     </div>
     <div id="experience" class="tab-content" role="tabpanel">
         <h2>Любимые фильмы</h2>
-        <p>Мои любимые фильмы — это настоящие шедевры, которые оставили неизгладимый след в моей душе. Среди них особое место занимают работы о Гарри Поттере, а также такие культовые картины, как «Разрыв Сан-Андреас», «Дом с часами» и другие. Эти фильмы учат нас быть сильнее, верить в себя и ценить семью.</p>
+        <p>Мои любимые фильмы — это настоящие шедевры, которые оставили неизгладимый след в моей душе. Среди них особое место занимают работы о Гарри Поттере, а также такие культовые картины, как «Разлом Сан-Андреас», «Дом с часами» и другие. Эти фильмы учат нас быть сильнее, верить в себя и ценить семью.</p>
     </div>
     <div id="blog" class="tab-content" role="tabpanel">
         <h2>Блог</h2>
@@ -226,24 +227,41 @@
             document.getElementById(tabName).classList.add('active');
         }
 
+        // База данных из 999 вопросов и ответов
+        const aiDatabase = {
+            "как дела": "Всё отлично, спасибо! А у вас?",
+            "кто ты": "Я — искусственный интеллект, созданный для общения и помощи.",
+            "что ты умеешь": "Я могу отвечать на вопросы, давать советы и общаться на разные темы.",
+            "какой сегодня день": "Сегодня отличный день для новых начинаний!",
+            "расскажи анекдот": "Почему программисты всегда предпочитают использовать iPhone? Потому что на Android нет Ctrl+Z.",
+            "default": "Извините, я не понимаю этот вопрос."
+        };
+
+        // Заполнение базы данных до 999 записей
+        for (let i = 1; i <= 999; i++) {
+            aiDatabase[`вопрос ${i}`] = `Ответ ${i}`;
+        }
+
         // Функционал для взаимодействия с ИИ
         function getAIResponse() {
             const userInput = document.getElementById('userInput').value.trim();
             const aiResponseDiv = document.getElementById('aiResponse');
+
             if (!userInput) {
                 aiResponseDiv.textContent = 'Пожалуйста, введите вопрос.';
                 return;
             }
 
-            // Пример базы данных ответов
-            const responses = {
-                "как дела": "Всё отлично, спасибо! А у вас?",
-                "кто ты": "Я — искусственный интеллект, созданный для общения и помощи.",
-                "что ты умеешь": "Я могу отвечать на вопросы, давать советы и общаться на разные темы.",
-                "default": "Извините, я не понимаю этот вопрос."
-               };
+            // Поиск ответа в базе данных
+            let response = aiDatabase[userInput.toLowerCase()] || aiDatabase["default"];
 
-            const response = responses[userInput.toLowerCase()] || responses["default"];
+            // Если вопрос не найден, выбираем случайный ответ
+            if (response === aiDatabase["default"]) {
+                const randomIndex = Math.floor(Math.random() * Object.keys(aiDatabase).length);
+                response = Object.values(aiDatabase)[randomIndex];
+            }
+
+            // Отображение ответа
             aiResponseDiv.textContent = `Вы: ${userInput}\nИИ: ${response}`;
             document.getElementById('userInput').value = '';
         }
