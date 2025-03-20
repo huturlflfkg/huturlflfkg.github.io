@@ -5,146 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Шлотова Алексея</title>
     <style>
-        /* Общие стили */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            transition: background-color 0.3s ease;
+            background-color: #f4f4f9;
         }
         header {
-            background: linear-gradient(135deg, #4CAF50, #2e7d32);
+            background-color: #333;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            animation: fadeIn 1s ease-in-out;
-        }
-        /* Вкладки */
         .tab-container {
             display: flex;
             justify-content: center;
-            background: #fff;
-            border-bottom: 2px solid #4CAF50;
-            overflow-x: auto;
-            scrollbar-width: none; /* Убираем полосу прокрутки */
-        }
-        .tab-container::-webkit-scrollbar {
-            display: none; /* Для Chrome/Edge/Safari */
+            background-color: #444;
+            padding: 10px;
         }
         .tab {
-            padding: 15px 20px;
+            color: white;
+            margin: 0 15px;
+            padding: 10px 20px;
             cursor: pointer;
-            background: #e7f3e7;
-            border: none;
-            border-right: 1px solid #4CAF50;
-            transition: background 0.3s, transform 0.3s;
-            white-space: nowrap;
-        }
-        .tab:hover {
-            background: #d4edda;
-            transform: scale(1.05);
+            border-radius: 5px;
         }
         .tab.active {
-            background: #4CAF50;
-            color: white;
+            background-color: #555;
         }
-        /* Контент вкладок */
         .tab-content {
             display: none;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.5s ease-in-out;
         }
         .tab-content.active {
             display: block;
         }
-        /* Футер */
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #4CAF50;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            font-size: 0.9em;
-        }
-        /* Стили для ссылок */
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #388e3c;
-            text-decoration: underline;
-        }
-        /* Чат с ИИ */
         .ai-chat {
-            margin: 20px auto;
             max-width: 600px;
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .ai-chat input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: border-color 0.3s;
-        }
-        .ai-chat input[type="text"]:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-        .ai-chat button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .ai-chat button:hover {
-            background: #388e3c;
+            margin: 0 auto;
+            text-align: center;
         }
         .ai-response {
             margin-top: 20px;
             padding: 10px;
-            background: #f1f1f1;
-            border-radius: 4px;
-            min-height: 50px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 100px;
+            text-align: left;
         }
-        /* Анимации */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-10px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .search-form {
+            margin: 20px auto;
+            width: 50%;
+            text-align: center;
+        }
+        .search-form input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -159,6 +91,7 @@
         <button class="tab" onclick="openTab('lectures')" role="tab">Мои доклады</button>
         <button class="tab" onclick="openTab('news')" role="tab">Новости</button>
         <button class="tab" onclick="openTab('ai')" role="tab">Чат с ИИ</button>
+        <button class="tab" onclick="openTab('search')" role="tab">Поиск сайтов</button>
     </div>
 
     <!-- Контент вкладок -->
@@ -190,6 +123,12 @@
             <li><strong>05.10.2023:</strong> Опубликовано обновление Robo Code 2.0.</li>
             <li><strong>01.10.2023:</strong> Началась регистрация на хакатон по ИИ.</li>
         </ul>
+        <h3>О России</h3>
+        <ul>
+            <li><strong>Флаг России:</strong> Триколор белого, синего и красного цветов символизирует благородство, честность, веру и великодушие.</li>
+            <li><strong>Герб России:</strong> Золотой двуглавый орёл на красном щите символизирует единство и независимость государства.</li>
+            <li><strong>Гимн России:</strong> Музыка написана Александром Александровым, а современный текст — Сергеем Михалковым. Гимн отражает величие и силу страны.</li>
+        </ul>
     </div>
 
     <div id="ai" class="tab-content" role="tabpanel">
@@ -198,6 +137,15 @@
             <input type="text" id="userInput" placeholder="Задайте вопрос..." />
             <button onclick="getAIResponse()">Отправить</button>
             <div class="ai-response" id="aiResponse"></div>
+        </div>
+    </div>
+
+    <div id="search" class="tab-content" role="tabpanel">
+        <div class="search-form">
+            <h2>Поиск сайтов</h2>
+            <input type="text" id="searchQuery" placeholder="Введите запрос для поиска..." />
+            <button onclick="performSearch()">Поиск</button>
+            <div id="searchResults"></div>
         </div>
     </div>
 
@@ -274,6 +222,37 @@
             }
 
             document.getElementById('userInput').value = '';
+        }
+
+        // Функционал для поиска сайтов
+        async function performSearch() {
+            const query = document.getElementById('searchQuery').value.trim();
+            const resultsDiv = document.getElementById('searchResults');
+
+            if (!query) {
+                resultsDiv.innerHTML = '<p>Пожалуйста, введите запрос для поиска.</p>';
+                return;
+            }
+
+            resultsDiv.innerHTML = '<p>Выполняется поиск...</p>';
+
+            try {
+                const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=YOUR_CX&q=${encodeURIComponent(query)}`);
+                const data = await response.json();
+
+                if (data.items && data.items.length > 0) {
+                    let resultsHTML = '<ul>';
+                    data.items.forEach(item => {
+                        resultsHTML += `<li><a href="${item.link}" target="_blank">${item.title}</a><br>${item.snippet}</li>`;
+                    });
+                    resultsHTML += '</ul>';
+                    resultsDiv.innerHTML = resultsHTML;
+                } else {
+                    resultsDiv.innerHTML = '<p>По вашему запросу ничего не найдено.</p>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<p>Ошибка при выполнении поиска: ${error.message || 'Неизвестная ошибка'}</p>`;
+            }
         }
     </script>
 </body>
