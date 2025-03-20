@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Шлотова Алексея</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Общие стили */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
         }
         header {
-            background: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #2e7d32);
             color: white;
-            padding: 20px 0;
             text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            margin: 0;
             font-size: 2.5em;
+            margin: 0;
+            animation: fadeIn 1s ease-in-out;
         }
+        /* Вкладки */
         .tab-container {
             display: flex;
             justify-content: center;
             background: #fff;
             border-bottom: 2px solid #4CAF50;
             overflow-x: auto;
+            scrollbar-width: none; /* Убираем полосу прокрутки */
+        }
+        .tab-container::-webkit-scrollbar {
+            display: none; /* Для Chrome/Edge/Safari */
         }
         .tab {
             padding: 15px 20px;
@@ -36,16 +48,18 @@
             background: #e7f3e7;
             border: none;
             border-right: 1px solid #4CAF50;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
             white-space: nowrap;
         }
         .tab:hover {
             background: #d4edda;
+            transform: scale(1.05);
         }
         .tab.active {
             background: #4CAF50;
             color: white;
         }
+        /* Контент вкладок */
         .tab-content {
             display: none;
             padding: 20px;
@@ -53,11 +67,13 @@
             max-width: 800px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s ease-in-out;
         }
         .tab-content.active {
             display: block;
         }
+        /* Футер */
         footer {
             text-align: center;
             padding: 10px 0;
@@ -66,30 +82,26 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            font-size: 0.9em;
         }
+        /* Стили для ссылок */
         a {
             color: #4CAF50;
             text-decoration: none;
+            transition: color 0.3s;
         }
         a:hover {
+            color: #388e3c;
             text-decoration: underline;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px 0;
-        }
-        ul {
-            padding-left: 20px;
-        }
+        /* Чат с ИИ */
         .ai-chat {
             margin: 20px auto;
             max-width: 600px;
             background: white;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         .ai-chat input[type="text"] {
             width: calc(100% - 22px);
@@ -97,6 +109,11 @@
             margin-top: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        .ai-chat input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
         }
         .ai-chat button {
             margin-top: 10px;
@@ -106,9 +123,10 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background 0.3s;
         }
         .ai-chat button:hover {
-            background: #45a049;
+            background: #388e3c;
         }
         .ai-response {
             margin-top: 20px;
@@ -116,6 +134,17 @@
             background: #f1f1f1;
             border-radius: 4px;
             min-height: 50px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -123,16 +152,46 @@
     <header>
         <h1>Портфолио Шлотова Алексея</h1>
     </header>
+
     <!-- Вкладки -->
     <div class="tab-container" role="tablist">
         <button class="tab active" onclick="openTab('about')" role="tab" aria-selected="true">Обо мне</button>
+        <button class="tab" onclick="openTab('lectures')" role="tab">Мои доклады</button>
+        <button class="tab" onclick="openTab('news')" role="tab">Новости</button>
         <button class="tab" onclick="openTab('ai')" role="tab">Чат с ИИ</button>
     </div>
+
     <!-- Контент вкладок -->
     <div id="about" class="tab-content active" role="tabpanel">
         <h2>Обо мне</h2>
         <p>Я начинающий разработчик в Robo Code и создаю игру хоррор...</p>
+        <img src="https://via.placeholder.com/800x400" alt="Пример работы">
+        <ul>
+            <li><strong>Навыки:</strong> HTML, CSS, JavaScript, Python</li>
+            <li><strong>Проекты:</strong> Разработка игр, веб-сайтов</li>
+        </ul>
     </div>
+
+    <div id="lectures" class="tab-content" role="tabpanel">
+        <h2>Мои доклады</h2>
+        <p>Здесь представлены мои выступления и презентации:</p>
+        <ul>
+            <li><strong>Доклад 1:</strong> "Введение в веб-разработку" (2023)</li>
+            <li><strong>Доклад 2:</strong> "Использование ИИ в проектах" (2023)</li>
+            <li><strong>Доклад 3:</strong> "Создание игр на Robo Code" (2022)</li>
+        </ul>
+    </div>
+
+    <div id="news" class="tab-content" role="tabpanel">
+        <h2>Новости</h2>
+        <p>Последние новости из мира разработки:</p>
+        <ul>
+            <li><strong>10.10.2023:</strong> Выпущен новый фреймворк для веб-разработки.</li>
+            <li><strong>05.10.2023:</strong> Опубликовано обновление Robo Code 2.0.</li>
+            <li><strong>01.10.2023:</strong> Началась регистрация на хакатон по ИИ.</li>
+        </ul>
+    </div>
+
     <div id="ai" class="tab-content" role="tabpanel">
         <div class="ai-chat">
             <h2>Чат с ИИ</h2>
@@ -141,10 +200,13 @@
             <div class="ai-response" id="aiResponse"></div>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2023 Портфолио Шлотова Алексея. Все права защищены.</p>
     </footer>
+
     <script>
+        // Переключение вкладок
         function openTab(tabName) {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.tab-content');
