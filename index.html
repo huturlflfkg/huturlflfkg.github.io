@@ -153,17 +153,8 @@
         <button class="tab" onclick="openTab('ai-tools')" role="tab">Инструменты ИИ</button>
     </div>
     <!-- Контент вкладок -->
-    <div id="ai" class="tab-content" role="tabpanel">
-        <div class="ai-chat">
-            <h2>Чат с ИИ</h2>
-            <input type="text" id="userInput" placeholder="Задайте вопрос..." />
-            <button onclick="getAIResponse()">Отправить</button>
-            <div class="ai-response" id="aiResponse"></div>
-        </div>
-    </div>
-    <footer>
+    <div id="about" class="tab-content active" role="tabpanel">
         <p>&copy;Я учусь играть на аккордеоне уже 5 лет, и это мое любимое увлечение! Музыка — это то, что делает мою жизнь ярче, а каждый выступление или репетиция приносит мне радость. Я стараюсь постоянно совершенствоваться, пробую новые стили и техники, а также с удовольствием делюсь своими успехами с друзьями и близкими.
-
 Мой путь в музыке
 Начало : Впервые я взял аккордеон в руки в возрасте 7 лет. Сначала было сложно, но моя любовь к музыке помогла мне преодолеть все трудности.
 Обучение : За эти 5 лет я освоил базовые техники игры, научился читать ноты и играть в разных жанрах: от классической музыки до современных композиций.
@@ -188,7 +179,6 @@
 Современные композиции: [Например, каверы на популярные песни].
 Почему я люблю музыку?
 Музыка — это способ выразить свои чувства и эмоции. Когда я играю на аккордеоне, я забываю обо всем на свете и полностью погружаюсь в процесс. Мне нравится видеть, как люди улыбаются, когда слушают мои выступления, и я мечтаю однажды стать профессиональным музыкантом.
-
 Мои планы на будущее
 Продолжать обучение и совершенствовать свое мастерство.
 Участвовать в новых конкурсах и фестивалях.
@@ -196,16 +186,99 @@
 Может быть, однажды выступить на большой сцене!
 Фото и видео
 Здесь можно добавить ссылки на фото или видео ваших выступлений, если они есть. Например:
-
 [Видео с выступления на конкурсе].
 [Фото с репетиции].
 Свяжитесь со мной
 Если вы хотите узнать больше о моем творчестве или пригласить меня на выступление, напишите мне:
-
 Email: [ваш email] (если есть).
 Телефон: [номер родителей или вашего контакта].
 Instagram: [ссылка на профиль, если есть].
 .</p>
+    </div>
+    <div id="skills" class="tab-content" role="tabpanel">
+        <h2>Мои навыки</h2>
+        <p>За последние годы я научился многим вещам:</p>
+        <ul>
+            <li>Программирование: Python, JavaScript</li>
+            <li>Работа с 3D-принтером</li>
+            <li>Создание роботов из LEGO Mindstorms</li>
+            <li>Работа в графических редакторах</li>
+        </ul>
+        <img src="https://via.placeholder.com/600x400" alt="Пример работы">
+    </div>
+    <div id="projects" class="tab-content" role="tabpanel">
+        <h2>Мои проекты</h2>
+        <p>Вот некоторые из моих проектов:</p>
+        <ul>
+            <li>Создание робота-пылесоса</li>
+            <li>Разработка простой игры на Python</li>
+            <li>3D-модель дома</li>
+        </ul>
+        <img src="https://via.placeholder.com/600x400" alt="Пример проекта">
+    </div>
+    <div id="education" class="tab-content" role="tabpanel">
+        <h2>Образование</h2>
+        <p>Я учусь в школе №123. Увлекаюсь программированием и робототехникой.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Школа">
+    </div>
+    <div id="experience" class="tab-content" role="tabpanel">
+        <h2>Опыт</h2>
+        <p>Я участвовал в нескольких конкурсах и хакатонах:</p>
+        <ul>
+            <li>Хакатон по робототехнике</li>
+            <li>Конкурс программистов</li>
+        </ul>
+        <img src="https://via.placeholder.com/600x400" alt="Конкурс">
+    </div>
+    <div id="blog" class="tab-content" role="tabpanel">
+        <h2>Блог</h2>
+        <p>Вот мои последние записи:</p>
+        <ul>
+            <li>Как я собрал робота</li>
+            <li>Мой первый опыт в программировании</li>
+        </ul>
+        <img src="https://via.placeholder.com/600x400" alt="Блог">
+    </div>
+    <div id="gallery" class="tab-content" role="tabpanel">
+        <h2>Галерея</h2>
+        <p>Фотографии моих работ:</p>
+        <img src="https://via.placeholder.com/600x400" alt="Работа 1">
+        <img src="https://via.placeholder.com/600x400" alt="Работа 2">
+    </div>
+    <div id="contact" class="tab-content" role="tabpanel">
+        <h2>Контакты</h2>
+        <p>Свяжитесь со мной:</p>
+        <ul>
+            <li>Email: example@example.com</li>
+            <li>Телефон: +7 (999) 123-45-67</li>
+        </ul>
+    </div>
+    <div id="faq" class="tab-content" role="tabpanel">
+        <h2>FAQ</h2>
+        <p>Часто задаваемые вопросы:</p>
+        <ul>
+            <li>Вопрос 1: Ответ 1</li>
+            <li>Вопрос 2: Ответ 2</li>
+        </ul>
+    </div>
+    <div id="feedback" class="tab-content" role="tabpanel">
+        <h2>Отзывы</h2>
+        <p>Отзывы о моей работе:</p>
+        <ul>
+            <li>"Отличный проект!"</li>
+            <li>"Очень талантливый ребенок!"</li>
+        </ul>
+    </div>
+    <div id="ai" class="tab-content" role="tabpanel">
+        <div class="ai-chat">
+            <h2>Чат с ИИ</h2>
+            <input type="text" id="userInput" placeholder="Задайте вопрос..." />
+            <button onclick="getAIResponse()">Отправить</button>
+            <div class="ai-response" id="aiResponse"></div>
+        </div>
+    </div>
+    <footer>
+        <p>© Портфолио Шлотова Алексея, 2023</p>
     </footer>
     <script>
         // База данных с 1 000 000 вопросов и ответов
@@ -213,7 +286,6 @@ Instagram: [ссылка на профиль, если есть].
         for (let i = 1; i <= 1000000; i++) {
             aiDatabase[`вопрос ${i}`] = `Ответ ${i}`;
         }
-
         // Функция для получения ответа от ИИ
         async function getAIResponse() {
             const userInput = document.getElementById('userInput').value.trim();
@@ -222,11 +294,9 @@ Instagram: [ссылка на профиль, если есть].
                 aiResponseDiv.textContent = 'Пожалуйста, введите вопрос.';
                 return;
             }
-
             // Показываем загрузку
             aiResponseDiv.textContent = 'ИИ думает...';
             await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 7000) + 3000)); // Задержка от 3 до 10 секунд
-
             // Проверка наличия вопроса в базе данных
             let response = aiDatabase[userInput.toLowerCase()];
             if (!response) {
@@ -235,12 +305,11 @@ Instagram: [ссылка на профиль, если есть].
                 // Сохраняем новый вопрос и ответ в базу данных
                 aiDatabase[userInput.toLowerCase()] = response;
             }
-
             // Отображение ответа
-            aiResponseDiv.textContent = `Вы: ${userInput}\nИИ: ${response}`;
+            aiResponseDiv.textContent = `Вы: ${userInput}
+ИИ: ${response}`;
             document.getElementById('userInput').value = '';
         }
-
         // Функция для отправки вопроса на сервер или к вам
         async function sendQuestionToServer(question) {
             try {
@@ -256,7 +325,6 @@ Instagram: [ссылка на профиль, если есть].
                 return "Произошла ошибка. Пожалуйста, попробуйте позже.";
             }
         }
-
         // Функция для переключения вкладок
         function openTab(tabName) {
             const tabs = document.querySelectorAll('.tab');
