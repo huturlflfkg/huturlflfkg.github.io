@@ -280,11 +280,9 @@
                 aiResponseDiv.textContent = 'Пожалуйста, введите вопрос.';
                 return;
             }
-
             // Показываем загрузку
             aiResponseDiv.textContent = 'ИИ думает...';
             await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 15000) + 1000)); // Задержка от 1 до 15 секунд
-
             // Проверка наличия вопроса в базе данных
             let response = aiDatabase[userInput.toLowerCase()];
             if (!response) {
@@ -293,10 +291,8 @@
                 // Сохраняем новый вопрос и ответ в базу данных
                 aiDatabase[userInput.toLowerCase()] = response;
             }
-
             // Отображение ответа
-            aiResponseDiv.textContent = `Вы: ${userInput}
-ИИ: ${response}`;
+            aiResponseDiv.textContent = `Вы: ${userInput}\nИИ: ${response}`;
             document.getElementById('userInput').value = '';
         }
 
@@ -312,3 +308,9 @@
                 return data.answer || "Извините, я не могу ответить на этот вопрос.";
             } catch (error) {
                 console.error('Ошибка при отправке вопроса:', error);
+                return "Произошла ошибка при обработке вашего запроса.";
+            }
+        }
+    </script>
+</body>
+</html>
