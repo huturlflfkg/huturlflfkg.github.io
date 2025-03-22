@@ -266,6 +266,18 @@
         <p>© Портфолио Шлотова Алексея, 2023</p>
     </footer>
     <script>
+        // Функция для переключения вкладок
+        function openTab(tabId) {
+            // Удаляем активный класс у всех вкладок
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            // Скрываем все контенты вкладок
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            // Добавляем активный класс выбранной вкладке
+            document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
+            // Показываем контент выбранной вкладки
+            document.getElementById(tabId).classList.add('active');
+        }
+
         // База данных с 1 000 000 вопросов и ответов
         const aiDatabase = {};
         for (let i = 1; i <= 1000000; i++) {
@@ -292,7 +304,8 @@
                 aiDatabase[userInput.toLowerCase()] = response;
             }
             // Отображение ответа
-            aiResponseDiv.textContent = `Вы: ${userInput}\nИИ: ${response}`;
+            aiResponseDiv.textContent = `Вы: ${userInput}
+ИИ: ${response}`;
             document.getElementById('userInput').value = '';
         }
 
