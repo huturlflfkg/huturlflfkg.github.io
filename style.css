@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #eee;
+}
+
+body.dark-mode header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #005fa3;
+}
+
+body.dark-mode nav a {
+  color: #6ec1ff;
+}
+
+body.dark-mode nav a:hover {
+  color: #a0daff;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.projects, .blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card, .post {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .project-card,
+body.dark-mode .post {
+  background: #2a2a2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .contact-form {
+  background: #2a2a2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0 1rem;
+  background: #f9f9f9;
+  border: none;
+  color: #333;
+  border-radius: 5px;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #333;
+  color: #f5f5f5;
+}
+
+.contact-form button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+body.dark-mode .contact-form button {
+  background: #6ec1ff;
+  color: black;
+}
+
+footer {
+  background: #efefef;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+body.dark-mode footer {
+  background: #1e1e1e;
+  color: #aaa;
+}
