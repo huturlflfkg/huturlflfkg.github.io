@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Контакты</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-mode">
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О себе</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Связаться со мной</h2>
+    <div class="contact-form">
+      <form onsubmit="alert('Спасибо за сообщение!'); return false;">
+        <input type="text" placeholder="Ваше имя" required />
+        <input type="email" placeholder="Email" required />
+        <textarea rows="5" placeholder="Сообщение"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Алексей Шлотов
+  </footer>
+
+</body>
+</html>
